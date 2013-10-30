@@ -1,0 +1,61 @@
+{% extends 'layouts/site/layout.twig' %}
+
+{% block content %}
+
+    <!-- NAVIGATION -->
+    <div id="breadcrumb">
+        <div class="container">
+            <div class="information">
+                <p class="section-title margint30">Portfólio das sacolas sustentáveis</p>
+                <hr class="underline">
+                <p class="breadcrumb-text">Você está aqui: <a href="#">Portfólio</a> > <a href="portfolio-4-columns.html">Sacolas sustentáveis</a></p>
+            </div>
+        </div>
+    </div>
+    <!-- PORTFOLIO -->
+    <div class="container margint40 marginb40" ng-controller="BagPortfolioController">
+        {#<div class="portfolio-filters clearfix">#}
+            {#<ul>#}
+                {#<li><a href="#" class="active" data-filter="*">All</a></li>#}
+                {#<li><a href="#" data-filter=".individual">Sacolas individuais</a></li>#}
+                {#<li><a href="#" data-filter=".group">Sacolas em grupo</a></li>#}
+            {#</ul>#}
+        {#</div>#}
+        <div class="row portfolio-box">
+            <div class="col-lg-3 col-sm-3 item design">
+                <div class="prtf-itm prtf-itm-4">
+                    <img src="temp/prtcl1.jpg" class="img-responsive" alt="" />
+                    <div class="mask">
+                        <div class="prt-lnk-wrppr clearfix">
+                            <div class="pull-left popup"><a href="temp/prtcl1.jpg" class="prettyPhoto"><i class="icon-search"></i></a></div>
+                            <div class="pull-left extlink"><a href="portfolio-single.html"><i class="icon-link"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info-box">
+                    <p><a href="portfolio-single.html">Lorem ipsum dolor sit</a></p>
+                    <div>Web Design</div>
+                </div>
+            </div>
+        </div>
+
+
+        <script id="portfolio-div" type="text/template">
+            <div class="col-lg-3 col-sm-3 item <%= bag.type %> z-index-555">
+                <div class="prtf-itm prtf-itm-4">
+                    <img src="<%= bag.imageUrl %>" class="img-responsive" alt="" />
+                    <div class="mask">
+                        <div class="prt-lnk-wrppr clearfix">
+                            <div class="pull-left popup"><a href="<%= bag.imageUrl %>" class="prettyPhoto"><i class="icon-search"></i></a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-info-box">
+                    <p><a href="portfolio-single.html"><%= bag.customer.name %></a></p>
+                    <div><%= bag.code %></div>
+                </div>
+            </div>
+        </script>
+    </div>
+
+{% endblock %}

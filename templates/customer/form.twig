@@ -1,0 +1,82 @@
+{% extends 'layouts/admin/layout.twig' %}
+{% block title %} - Cadastro de cliente{% endblock %}
+{% block content %}
+    <div class="row-fluid" ng-controller="CustomerController">
+        <div class="span12">
+            <div class="box">
+                <div class="box-title">
+                    <h3>
+                        <i class="icon-user"></i>
+                        Cadastro de cliente
+                    </h3>
+                </div>
+                <div class="box-content">
+                    <form id="customerForm" class="form-horizontal" method="POST" enctype="multipart/form-data" >
+                        <div class="control-group">
+                            <label for="textfield" class="control-label">
+                                Foto cadastrada
+                            </label>
+                            <div class="controls">
+                                <img src="{[{customerForm.imageURL}]}" width="50" height="50"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="textfield" class="control-label">
+                                Foto do cliente
+                            </label>
+                            <div class="controls">
+                                <div class="fileupload fileupload-new" data-provides="fileupload">
+                                    <span class="btn btn-file"><span class="fileupload-new">Selecionar foto do cliente</span>
+                                        <span class="fileupload-exists">Mudar</span>
+                                        <input type="file" id="imageUrl" name='imageUrl' />
+                                    </span>
+                                    <span class="fileupload-preview"></span>
+                                    <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Nome</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge required" ng-model="customerForm.name">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Email</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge email" ng-model="customerForm.email">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Endereço</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" ng-model="customerForm.address">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Telefone</label>
+                            <div class="controls">
+                                <input type="text" class="required number input-mini" maxlength="3" placeholder="DDD. Ex: 061" ng-model="customerForm.dddNumber" >
+                                <input type="text" class="required number input-medium" maxlength="10" placeholder="Número de telefone" ng-model="customerForm.phoneNumber" >
+                            </div>
+                        </div>
+                        <hr/>
+                        <div class="form-actions">
+                            <a href="/clientes" class="btn btn-primary">Voltar</a>
+                            <button type="submit" class="btn btn-success" ng-click="save()">Salvar</button>
+                            <button class="btn" type="button" ng-click="cancel()">Cancelar</button>
+                        </div>
+                        <input type="hidden" class="" name="id" ng-model="customerForm._id" value="{{ id }}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="/js/admin/app/customer/customer.model.js"></script>
+    <script type="text/javascript" src="/js/admin/app/customer/customer.form.js"></script>
+{% endblock %}
+

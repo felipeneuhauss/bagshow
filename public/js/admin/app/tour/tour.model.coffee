@@ -1,0 +1,1 @@
+class Tour extends AbstractModel

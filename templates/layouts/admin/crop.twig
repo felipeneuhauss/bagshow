@@ -1,0 +1,29 @@
+{% block crop %}
+    <div id="cropModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="myModalLabel">Marque a área da imagem para cortá-la</h3>
+        </div>
+        <div class="modal-body">
+            <div class="span8">
+                <div class="frame" style="margin: 0 0.3em; width: 300px; height: 300px;">
+                    <img id="photo" src="{[{ imageUrlSrc }]}" />
+                </div>
+            </div>
+            <div class="span4">
+                <input type="text" ng-model="x1" class="input-small" />
+                <input type="text" ng-model="y1" class="input-small" />
+                <input type="text" ng-model="x2" class="input-small" />
+                <input type="text" ng-model="y2" class="input-small" />
+                <input type="text" ng-model="w" class="input-small" />
+                <input type="text" ng-model="h" class="input-small" />
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="doCrop()">Pronto!</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/admin/plugins/jquery-img-area-select/scripts/jquery.imgareaselect.pack.js"></script>
+    <link rel="stylesheet" href="/js/admin/plugins/jquery-img-area-select/css/imgareaselect-animated.css">
+{% endblock %}

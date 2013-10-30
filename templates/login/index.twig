@@ -1,0 +1,87 @@
+{% extends 'layouts/login/login.twig' %}
+{% block title %} - Login{% endblock %}
+
+{% block content %}
+    <div class="wrapper" ng-controller="LoginController">
+        <h1><a href="index.html">BagShow</a></h1>
+        <div class="alert alert-info hide" id="status-message"></div>
+        <div class="login-body">
+            <div class="signin-content" ng-show="signIn">
+                <h2>Login</h2>
+                <form method='post' id="signInForm">
+                    <div ng-show="showLoginErrorContainer">
+                        <div class="alert alert-error">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <strong>Ops!</strong>{[{messageError}]}
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="email controls">
+                            <input type="text" ng-model="signInForm.email" placeholder="Email" class='input-block-level required email' value="{[{signInForm.username}]}">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="pw controls">
+                            <input type="password" ng-model="signInForm.password" placeholder="Senha" class='input-block-level required' value="{[{signInForm.password}]}" >
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Entrar" ng-click="signInAction()" class='btn btn-primary'>
+                    </div>
+                </form>
+            </div>
+            {#<div class="signup-content" ng-show="signUp">#}
+                {#<h2>Cadastro</h2>#}
+                {#<form method='post' id="signUpForm">#}
+                    {#<div class="control-group">#}
+                        {#<div class="controls">#}
+                            {#<input type="text" ng-model="signUpForm.fname" placeholder="Seu nome" class='input-block-level required' >#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="control-group">#}
+                        {#<div class="email controls">#}
+                            {#<input type="text" ng-model="signUpForm.email" placeholder="Email" class='input-block-level required email' >#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="control-group">#}
+                        {#<div class="pw controls">#}
+                            {#<input type="password" id="password" ng-model="signUpForm.password" placeholder="Senha" class='input-block-level required'>#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="control-group">#}
+                        {#<div class="pw controls">#}
+                            {#<input type="password" ng-model="signUpForm.repeatPassword"#}
+                                   {#placeholder="Repita a senha" class='input-block-level required equalTo'#}
+                                   {#equalTo="#signUpForm #password">#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="submit">#}
+                        {#<input type="submit" value="Cadastrar" class='btn btn-primary' ng-click="signUpAction()">#}
+                    {#</div>#}
+                {#</form>#}
+            {#</div>#}
+            {#<div class="forgot-content" ng-show="forgotPassword">#}
+                {#<h2>Esqueceu sua senha?</h2>#}
+                {#<form action="index.html" method='get' class='form-validate' id="test">#}
+                    {#<div class="control-group">#}
+                        {#<div class="email controls">#}
+                            {#<input type="text" ng-model="forgotPasswordForm.email"#}
+                                   {#placeholder="Email" class='input-block-level'#}
+                                   {#value="{[{signInForm.username}]}" data-rule-email="true" data-rule-required="true">#}
+                        {#</div>#}
+                    {#</div>#}
+                    {#<div class="submit">#}
+                        {#<input type="submit" value="Recuperar senha" class='btn btn-primary'>#}
+                    {#</div>#}
+                {#</form>#}
+            {#</div>#}
+            <div class="forget">
+                <a href="/"><span>Voltar a página principal</span></a>
+                {#<a href="javascript:void(0)" ng-click="showSignUpOrSignInForm()"><span>{[{signInOrSignUpText}]}</span></a>#}
+                {#<a href="javascript:void(0)" ng-click="showForgetPasswordForm()"><span>Esqueçeu sua senha?</span></a>#}
+            </div>
+        </div>
+    </div>
+    <script src='/js/admin/app/user/user.login.js'></script>
+{% endblock %}
+

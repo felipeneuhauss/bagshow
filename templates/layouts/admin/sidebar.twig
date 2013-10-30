@@ -1,0 +1,45 @@
+{% block sidebar %}
+    <div id="left" class="ui-sortable ui-resizable">
+        <form class="search-form" method="GET" action="search-results.html">
+            <div class="search-pane">
+                <input type="text" placeholder="Pesquisar..." name="search">
+                <button type="submit"><i class="icon-search"></i></button>
+            </div>
+        </form>
+        <div class="subnav">
+            <div class="subnav-title">
+                <a class="toggle-subnav" href="#"><i class="icon-angle-down"></i><span>Logo dos clientes</span></a>
+            </div>
+            <ul class="subnav-menu">
+                <li>
+                    <a href="/cartao/">Nova logo</a>
+                    <a href="/cartoes">Listar logos</a>
+                </li>
+            </ul>
+        </div>
+        <div class="subnav">
+            <div class="subnav-title">
+                <a class="toggle-subnav" href="#"><i class="icon-angle-down"></i><span>Bolsas</span></a>
+            </div>
+            <ul class="subnav-menu">
+                <li>
+                    <a href="/bolsa/">Nova bolsa</a>
+                    <a href="/bolsas">Listar bolsas</a>
+                </li>
+            </ul>
+        </div>
+        <div class="subnav">
+            <div class="subnav-title">
+                <a class="toggle-subnav" href="#"><i class="icon-angle-down"></i><span>Cientes</span></a>
+            </div>
+            <ul class="subnav-menu">
+                <li>
+                    <a href="/cliente/">Novo cliente</a>
+                    <a href="/clientes">Listar clientes</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="ui-resizable-handle ui-resizable-e" style="z-index: 90; height: 169px;"></div>
+    </div>
+{% endblock %}

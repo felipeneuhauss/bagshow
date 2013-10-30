@@ -1,0 +1,21 @@
+{
+    "name": "kinvey-project/project",
+    "type": "library",
+    "description": "Base para projetos com kinvey e angular",
+    "keywords": ["kinvey","angular"],
+    "homepage": "http://github.com/Seldaek/monolog",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Felipe Neuhauss",
+            "email": "felipe.neuhauss@gmail.com",
+            "homepage": "",
+            "role": "Developer"
+        }
+    ],
+	"require": {
+        "silex/silex": "1.0.*@dev",
+	     "twig/twig": ">=1.8,<2.0-dev",
+	     "symfony/twig-bridge": "2.3.*@dev"
+    }
+}

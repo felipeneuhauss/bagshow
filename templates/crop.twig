@@ -1,0 +1,53 @@
+{% block crop %}
+	<div style='position:relative'>
+		<img id='photo' src="http://omelete.uol.com.br/images/galerias/Batman-em-20-momentos/Batman-por-Marshall-Rogers.jpg" alt="batman" />
+	</div>
+	<br />
+	<div class="frame" 
+      style="margin: 0 1em; width: 100px; height: 100px;">
+      <div class="imgareaselect-preview" style="width: 100px; height: 100px; overflow: hidden;">
+        <img src="http://omelete.uol.com.br/images/galerias/Batman-em-20-momentos/Batman-por-Marshall-Rogers.jpg" alt="batman" style="width: 100px;"/>
+      </div>
+
+      <form id='imgareaselect-form' action="#this">
+      	<input type="hidden" name="x" />
+      	<input type="hidden" name="y" />
+      	<input type="hidden" name="w" />
+      	<input type="hidden" name="h" />
+      	<input type="submit" value="Salvar" />
+      </form>
+
+    </div>
+
+	<script type="text/javascript">
+		$(document).ready(function () {
+			var preview = function (img, selection) {
+			    if (!selection.width || !selection.height)
+			        return;
+
+			    var scaleX = 100 / selection.width;
+			    var scaleY = 100 / selection.height;
+
+			    $('.imgareaselect-preview img').css({
+			        width: Math.round(scaleX * $('#photo').width()) + "px",  
+			        height: Math.round(scaleY * $('#photo').height()) + "px",  
+			        marginLeft: "-" + Math.round(scaleX * selection.x1) + "px",  
+			        marginTop: "-" + Math.round(scaleY * selection.y1) + "px" 
+			    });
+			}
+
+		    $crop = $('img#photo').imgAreaSelect({
+		    	instance: true, 
+		    	aspectRatio: '1:1',
+		    	handles: true,
+		    	onSelectEnd: function(image,selection){
+		    		$('#imgareaselect-form > input[name="x"]').val(selection.x1);
+				    $('#imgareaselect-form > input[name="y"]').val(selection.y1);
+				    $('#imgareaselect-form > input[name="w"]').val(selection.width);
+				    $('#imgareaselect-form > input[name="h"]').val(selection.height);    
+		    	},
+		    	onSelectChange: preview
+		    });
+		});
+	</script>
+{% endblock %}

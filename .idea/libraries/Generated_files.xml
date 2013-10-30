@@ -1,0 +1,31 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/business-card/business-card.form.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/core/core.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/bag/bag.list.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/user/user.login.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/bag/bag.form.js" />
+        <item url="file://$PROJECT_DIR$/public/js/site/pages/index/business-card.list.js" />
+        <item url="file://$PROJECT_DIR$/public/js/site/pages/bag-portfolio/bag-portfolio.portfolio.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/business-card/business-card.list.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/bag/bag.model.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin/app/business-card/business-card.model.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/business-card/business-card.form.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/core/core.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/bag/bag.list.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/bag/bag.form.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/user/user.login.js" />
+      <root url="file://$PROJECT_DIR$/public/js/site/pages/index/business-card.list.js" />
+      <root url="file://$PROJECT_DIR$/public/js/site/pages/bag-portfolio/bag-portfolio.portfolio.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/business-card/business-card.list.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/bag/bag.model.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin/app/business-card/business-card.model.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

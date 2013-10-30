@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Apple devices fullscreen -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Apple devices fullscreen -->
+    <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <title>BagShow {% block title %}{% endblock %}</title>
+
+    <!-- jQuery -->
+    <script src="/js/admin/jquery.min.js"></script>
+
+    <!-- underscore -->
+    <script src="/js/admin/plugins/underscore/underscore-min.js"></script>
+    <!-- kinveu -->
+    <script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.0.0.min.js"></script>
+    <!-- Angular -->
+    <script src="/js/admin/plugins/angularjs/angular.min.js"></script>
+    <script src="/js/admin/access/login.js"></script>
+
+    <!-- configs -->
+    <script src="/js/admin/configs/config.angular.js"></script>
+    <script src="/js/admin/configs/_noConflits.js"></script>
+
+    <!-- angular -->
+    <script src="/js/admin/plugins/angularjs-ui/modules/bootstrap/ui-bootstrap-0.5.0.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/date/date.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/filters/currency.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/mask/app-phone-mask.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/mask/app-money-mask.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/date/app-datepicker.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/date/app-bootstrap-datepicker.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/utils.js"></script>
+
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/admin/bootstrap.min.css">
+    <!-- Bootstrap responsive -->
+    <link rel="stylesheet" href="/css/admin/bootstrap-responsive.min.css">
+    <!-- icheck -->
+    <link rel="stylesheet" href="/css/admin/plugins/icheck/all.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/css/admin/style.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/css/admin/themes.css">
+
+    <!-- Nice Scroll -->
+    <script src="/js/admin/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- Validation -->
+    <script src="/js/admin/plugins/validation/jquery.validate.js"></script>
+    <script src="/js/admin/plugins/validation/additional-methods.min.js"></script>
+    <!-- icheck -->
+    <script src="/js/admin/plugins/icheck/jquery.icheck.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/admin/bootstrap.min.js"></script>
+    <script src="/js/admin/eakroko.js"></script>
+
+    <!--[if lte IE 9]>
+    <script src="/js/admin/plugins/placeholder/jquery.placeholder.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input, textarea').placeholder();
+        });
+    </script>
+    <![endif]-->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- Apple devices Homescreen icon -->
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
+
+    <script src='/js/admin/core/core.js'></script>
+
+</head>
+
+<body ng-app="angularApp" class="theme-satgreen login" data-theme="theme-satgreen">
+    {% block content %}{% endblock %}
+</body>
+</html>

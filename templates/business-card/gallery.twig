@@ -1,0 +1,42 @@
+{% extends 'layouts/admin/layout.twig' %}
+{% block title %} - Cartões de visita{% endblock %}
+{% block content %}
+    <div class="row-fluid" ng-controller="BusinessCardListController">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <h3>
+                            <i class="icon-picture"></i>
+                            Cartões de visita
+                        </h3>
+                    </div>
+                    <div class="box-content nopadding">
+                        <ul class="gallery gallery-dynamic masonry">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="colorbox-image" type="text/template">
+            <li>
+                <a href="#">
+                    <img alt="" src="<%= businessCard.imageUrl %>" class="thumb-image-business-card">
+                </a>
+                <a class="customer-photo-name" href="#"><%= businessCard.customer.name %></a>
+                <div class="extras">
+                    <div class="extras-inner">
+                        <a rel="group-1" class="colorbox-image cboxElement" href="<%= businessCard.imageUrl %>"><i class="icon-search"></i></a>
+                        <a href="/cartao/<%= businessCard._id %>"><i class="icon-pencil"></i></a>
+                    </div>
+                </div>
+            </li>
+        </script>
+    </div>
+
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="/js/admin/app/business-card/business-card.list.js"></script>
+{% endblock %}
+

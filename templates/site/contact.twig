@@ -1,0 +1,83 @@
+{% extends 'layouts/site/layout.twig' %}
+
+{% use "layouts/site/slides.twig" %}
+{% block content %}
+    <!-- NAVIGATION -->
+    <div id="breadcrumb">
+        <div class="container">
+            <div class="information">
+                <p class="section-title margint30">Contato</p>
+                <hr class="underline">
+            </div>
+        </div>
+    </div>
+    <!-- GOOGLE MAP -->
+    <div id="map" class="margint40"></div>
+    <!-- CONTACT INFORMATIONS -->
+    <div class="contact-info">
+        <div class="container margint40 marginb40">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12">
+                    <h4 class="color-text">Samambaia Norte</h4>
+                    <p class="margint20">
+                        QN 210 Conjunto C Lote 01 Sala 104
+                        Samambaia Norte - CEP: 72316-520
+                        Distrito Federal<br />
+                    </p>
+                    <p class="margint20">
+                        <strong>Telefone:</strong> + 55 61 3046 7008<br />
+                        <strong>E-mail:</strong> contatobagshow@gmail.com
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {#<!-- CONTACT FORM -->#}
+    {#<div class="container contact-details margint30 marginb40">#}
+        {#<h2>We are all loving Customers.</h2>#}
+        {#<p class="margint20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque alias dicta soluta autem molestiae labore recusandae incidunt quo hic quidem earum eaque quae sint ipsa.</p>#}
+        {#<div class="row margint20 contact-form">#}
+            {#<div class="col-lg-8 col-sm-8">#}
+                {#<h4 class="margint30">Contact Us</h4>#}
+                {#<form action="#" method="post" id="ajax-contact-form">#}
+                    {#<div class="contact-input-area margint20">#}
+                        {#<div class="form-group clearfix">#}
+                            {#<div class="pull-left inpt-name">Name *</div>#}
+                            {#<div class="pull-left"><input type="text" name="name" /></div>#}
+                        {#</div>#}
+                        {#<div class="form-group margint20 clearfix">#}
+                            {#<div class="pull-left inpt-name">E-Mail *</div>#}
+                            {#<div class="pull-left"><input type="text" name="email" /></div>#}
+                        {#</div>#}
+                        {#<div class="form-group margint20 clearfix">#}
+                            {#<div class="pull-left inpt-name">Web Site</div>#}
+                            {#<div class="pull-left"><input type="text" name="website" /></div>#}
+                        {#</div>#}
+                        {#<div class="form-group margint20">#}
+                            {#<div>Subject</div>#}
+                            {#<div class="margint10"><textarea type="text" name="subject"></textarea></div>#}
+                        {#</div>#}
+                        {#<div class="pull-right margint10">#}
+                            {#<input class="form-button" type="submit" value="Send">#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</form>#}
+            {#</div>#}
+            {#<div class="col-lg-4 col-sm-4">#}
+                {#<h4 class="margint30">Social</h4>#}
+                {#<ul class="margint20 contact-social">#}
+                    {#<li><a href="#"><i class="icon-facebook"></i> Find on Facebook</a></li>#}
+                    {#<li><a href="#"><i class="icon-twitter"></i> Find on Twitter</a></li>#}
+                    {#<li><a href="#"><i class="icon-google-plus"></i> Find on Google Plus</a></li>#}
+                    {#<li><a href="#"><i class="icon-skype"></i> Find on Skype</a></li>#}
+                {#</ul>#}
+                {#<h4 class="margint30">Open Hours</h4>#}
+                {#<p class="margint20">#}
+                    {#Monday-Friday: 9am to 5pm<br />#}
+                    {#Saturday: 10am to 2pm<br />#}
+                    {#Sunday: Closed#}
+                {#</p>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
+{% endblock %}

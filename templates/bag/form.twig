@@ -1,0 +1,106 @@
+{% extends 'layouts/admin/layout.twig' %}
+{% block title %} - Cadastro de eco bolsa{% endblock %}
+{% block content %}
+    <div class="row-fluid" ng-controller="BagController">
+        <div class="span12">
+            <div class="box">
+                <div class="box-title">
+                    <h3>
+                        <i class="glyphicon-shopping_bag"></i>
+                        Cadastro de bolsas ecológicas
+                    </h3>
+                </div>
+                <div class="box-content">
+                    <form id="bagForm" class="form-horizontal" method="POST" enctype="multipart/form-data" >
+                        <div class="control-group">
+                            <label for="textfield" class="control-label">
+                                Informe o cliente
+                            </label>
+                            <div class="controls">
+                                <select ng-model="bagForm.customer" class="" ng-options="customer.id as customer.name for customer in customers">
+                                    <option value="">- Selecione um cliente -</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label for="textfield" class="control-label">
+                                Foto da produção
+                            </label>
+                            <div class="controls">
+                                <div data-provides="fileupload" class="fileupload fileupload-new"><input type="hidden" value="" name="imagefile">
+                                    <div style="width: 200px; height: 150px;" class="fileupload-new thumbnail"><img src="{[{bagForm.imageUrl}]}"></div>
+                                    <div style="max-width: 200px; max-height: 150px; line-height: 20px;" class="fileupload-preview fileupload-exists thumbnail"></div>
+                                    <div ng-show="showUploadImageOptions">
+                                        <span class="btn btn-file"><span class="fileupload-new">Selecione a imagem</span><span class="fileupload-exists">Alterar</span><input type="file" name="imageUrl" id="imageUrl" ></span>
+                                        <a data-dismiss="fileupload" class="btn fileupload-exists" href="#">Remove</a>
+                                        <a class="btn btn-info" ng-click="uploadImage('#imageUrl')" >Fazer upload da foto</a>
+                                        <img src="/img/admin/loading.gif" ng-show="wait" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Código</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge required" ng-model="bagForm.code">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Nome</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge required" ng-model="bagForm.name">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Tipo de sacola</label>
+                            <div class="controls">
+                                <input type="radio" ng-model="bagForm.type" value="individual"> Individual <br/>
+                                <input type="radio" ng-model="bagForm.type" value="group"> Grupo <br/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Quantidade</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge required" ng-model="bagForm.quantity">
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Custo unitário</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" ng-model="bagForm.unityCost" app-money-mask>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Valor cobrado</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" ng-model="bagForm.chargedCost" app-money-mask>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Total</label>
+                            <div class="controls">
+                                {[{getTotalCost() | currency: 'BRA'}]}
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label">Data prevista para entrega</label>
+                            <div class="controls">
+                                <input type="text" class="input-xlarge" ng-model="bagForm.deliveryEstimated" app-bootstrap-datepicker>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success" ng-click="save()">Salvar</button>
+                            <a class="btn btn-info" ng-click="remove(bagForm._id)" ng-show="bagForm._id">Remover</a>
+                        </div>
+                        <input type="hidden" class="" name="id" ng-model="bagForm._id" value="{{ id }}">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="/js/admin/app/bag/bag.model.js"></script>
+    <script type="text/javascript" src="/js/admin/app/bag/bag.form.js"></script>
+{% endblock %}
+

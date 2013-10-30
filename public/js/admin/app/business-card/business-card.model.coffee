@@ -1,0 +1,1 @@
+class BusinessCard extends AbstractModel

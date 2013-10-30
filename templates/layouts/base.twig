@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" class="{% block className %}{% endblock %}" xmlns:script="http://www.w3.org/1999/html" ng-app="angularApp">
+    <head>
+        <script src="/js/admin/jquery.min.js"></script>
+        <script src="//da189i1jfloii.cloudfront.net/js/kinvey-html5-1.0.0.min.js"></script>
+        <script src="/js/admin/plugins/angularjs/angular.min.js"></script>
+        <script src="/js/admin/core/core.js"></script>
+        <script src="/js/admin/access/user.js"></script>
+
+        {% block head %}
+            <meta charset="utf-8">
+            {#<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />#}
+            {#<!-- Apple devices fullscreen -->#}
+            {#<meta name="apple-mobile-web-app-capable" content="yes" />#}
+            {#<!-- Apple devices fullscreen -->#}
+            {#<meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />#}
+
+            <title>BagShow {% block title %}{% endblock %}</title>
+            {% block style %}
+            {% endblock %}    
+        {% endblock %}
+
+    </head>
+    <body class="theme-satgreen" data-theme="theme-satgreen">
+        {% block body %}{% endblock %}
+        {% block javascriptBase %}{% endblock %}
+        {% block javascript %}{% endblock %}
+    </body>
+</html>

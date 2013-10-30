@@ -1,0 +1,20 @@
+{
+  "name": "nosclassificados",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mxcl/homebrew",
+  "authors": [
+    "Felipe Neuhauss Araújo <felipe.neuhauss@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.5.2",
+    "angular": "~1.0.8"
+  }
+}

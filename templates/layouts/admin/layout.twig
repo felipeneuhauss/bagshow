@@ -1,0 +1,196 @@
+{% extends 'layouts/base.twig' %}
+
+{% block style %}
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/css/admin/bootstrap.min.css">
+    <!-- Bootstrap responsive -->
+    <link rel="stylesheet" href="/css/admin/bootstrap-responsive.min.css">
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="/css/admin/plugins/jquery-ui/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="/css/admin/plugins/jquery-ui/smoothness/jquery.ui.theme.css">
+    <!-- PageGuide -->
+    <link rel="stylesheet" href="/css/admin/plugins/pageguide/pageguide.css">
+
+    <!-- colorbox -->
+    <link rel="stylesheet" href="/css/admin/plugins/colorbox/colorbox.css">
+
+    <!-- Fullcalendar -->
+    <link rel="stylesheet" href="/css/admin/plugins/fullcalendar/fullcalendar.css">
+    <link rel="stylesheet" href="/css/admin/plugins/fullcalendar/fullcalendar.print.css" media="print">
+    <!-- chosen -->
+    <link rel="stylesheet" href="/css/admin/plugins/chosen/chosen.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="/css/admin/plugins/select2/select2.css">
+    <!-- icheck -->
+    <link rel="stylesheet" href="/css/admin/plugins/icheck/all.css">
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="/css/admin/style.css">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="/css/admin/themes.css">
+    <!-- dataTables -->
+    <link rel="stylesheet" href="/js/admin/plugins/datatable/TableTools.css">
+
+    <!-- jquery.nailthumb.1.1 -->
+    <link rel="stylesheet" href="/js/admin/plugins/nailthumb/jquery.nailthumb.1.1.css">
+
+{% endblock %}
+
+{# Referencia os templates para serem adicionados no layout #}
+{% use "layouts/admin/navigation.twig" %}
+{% use "layouts/admin/sidebar.twig" %}
+
+{% block body %}
+        {# Adiciona o menu superior do sistema #}
+        {% block navigation %}
+            {{ parent() }}
+        {% endblock %}
+
+        <div id="content" class="container-fluid">
+            {% block sidebar %}
+                {{ parent() }}
+            {% endblock %}
+            {# Div onde o conteúdo será carregado #}
+            <div id="main">
+                <div class="container-fluid">
+                    <div id="message-container">
+                    </div>
+                    {% block content %}{% endblock %}
+                 </div>
+            </div>
+        </div>
+
+        <script id="message-template" type="text/template">
+            <div class="alert alert-<%=type %> affix-message span10" >
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <%= message %>
+            </div>
+        </script>
+
+{% endblock %}
+
+{% block javascriptBase %}
+    <!-- Moment -->
+    <script src="/js/admin/plugins/moment_js/moment.min.js"></script>
+    <script src="/js/admin/plugins/moment_js/lang/pt.js"></script>
+
+    <!-- accounting.min.js -->
+    <script src="/js/admin/plugins/accounting/accounting.js"></script>
+
+    <!-- mask.maskmoney.js -->
+    <script src="/js/admin/plugins/mask/jquery.maskmoney.js"></script>
+    <script src="/js/admin/plugins/mask/jquery.maskedinput-1.2.2.min.js"></script>
+
+    <!-- Nice Scroll -->
+    <script src="/js/admin/plugins/nicescroll/jquery.nicescroll.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="/js/admin/plugins/jquery-ui/jquery.ui.core.min.js"></script>
+    <script src="/js/admin/plugins/jquery-ui/jquery.ui.widget.min.js"></script>
+    <script src="/js/admin/plugins/jquery-ui/jquery.ui.mouse.min.js"></script>
+    <script src="/js/admin/plugins/jquery-ui/jquery.ui.draggable.min.js"></script>
+    <script src="/js/admin/plugins/jquery-ui/jquery.ui.resizable.min.js"></script>
+    <script src="/js/admin/plugins/jquery-ui/jquery.ui.sortable.min.js"></script>
+    <!-- Touch enable for jquery UI -->
+    <script src="/js/admin/plugins/touch-punch/jquery.touch-punch.min.js"></script>
+    <!-- slimScroll -->
+    <script src="/js/admin/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/js/admin/bootstrap.min.js"></script>
+    <!-- vmap -->
+    <script src="/js/admin/plugins/vmap/jquery.vmap.min.js"></script>
+    <script src="/js/admin/plugins/vmap/jquery.vmap.world.js"></script>
+    <script src="/js/admin/plugins/vmap/jquery.vmap.sampledata.js"></script>
+    <!-- Bootbox -->
+    <script src="/js/admin/plugins/bootbox/jquery.bootbox.js"></script>
+    <!-- Flot -->
+    <script src="/js/admin/plugins/flot/jquery.flot.min.js"></script>
+    <script src="/js/admin/plugins/flot/jquery.flot.bar.order.min.js"></script>
+    <script src="/js/admin/plugins/flot/jquery.flot.pie.min.js"></script>
+    <script src="/js/admin/plugins/flot/jquery.flot.resize.min.js"></script>
+    <!-- imagesLoaded -->
+    <script src="/js/admin/plugins/imagesLoaded/jquery.imagesloaded.min.js"></script>
+    <!-- PageGuide -->
+    <script src="/js/admin/plugins/pageguide/jquery.pageguide.js"></script>
+    <!-- FullCalendar -->
+    <script src="/js/admin/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <!-- Chosen -->
+    <script src="/js/admin/plugins/chosen/chosen.jquery.min.js"></script>
+    <!-- select2 -->
+    <script src="/js/admin/plugins/select2/select2.min.js"></script>
+    <!-- icheck -->
+    <script src="/js/admin/plugins/icheck/jquery.icheck.min.js"></script>
+    <!-- Bootbox -->
+    <script src="/js/admin/plugins/bootbox/jquery.bootbox.js"></script>
+
+    <!-- Theme framework -->
+    <script src="/js/admin/eakroko.js"></script>
+    <!-- Theme scripts -->
+    <script src="/js/admin/application.js"></script>
+    {#<script src="/js/admin/demonstration.min.js"></script>#}
+
+    <!-- Datepicker -->
+    <script src="/js/admin/plugins/timepicker/bootstrap-timepicker.min.js"></script>
+    <script src="/js/admin/plugins/datepicker/bootstrap-datepicker.js"></script>
+    <script src="/js/admin/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js"></script>
+
+    <!--[if lte IE 9]>
+    <script src="/js/admin/plugins/placeholder/jquery.placeholder.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input, textarea').placeholder();
+        });
+    </script>
+    <![endif]-->
+    <!-- underscore -->
+    <script src="/js/admin/plugins/underscore/underscore-min.js"></script>
+
+    <!-- app -->
+    <script src="/js/admin/app/constants.js"></script>
+    <script src="/js/admin/app/utils.js"></script>
+
+    <!-- configs -->
+    <script src="/js/admin/configs/config.angular.js"></script>
+    <script src="/js/admin/configs/_noConflits.js"></script>
+
+    <!-- angular -->
+    <script src="/js/admin/plugins/angularjs-ui/modules/bootstrap/ui-bootstrap-0.5.0.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/date/date.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/filters/currency.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/mask/app-phone-mask.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/mask/app-money-mask.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/date/app-datepicker.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/date/app-bootstrap-datepicker.js"></script>
+    <script src="/js/admin/plugins/angularjs-ui/modules/utils.js"></script>
+
+    <!-- datatable -->
+    <script src="/js/admin/plugins/datatable/jquery.dataTables.min.js"></script>
+    <script src="/js/admin/plugins/datatable/TableTools.min.js"></script>
+    <script src="/js/admin/plugins/datatable/ColReorder.min.js"></script>
+    <script src="/js/admin/plugins/datatable/ColVis.min.js"></script>
+    <script src="/js/admin/plugins/datatable/jquery.dataTables.columnFilter.js"></script>
+
+    <!-- Tour -->
+    <script src="/js/admin/plugins/intro/intro.js"></script>
+    <link rel="stylesheet" href="/js/admin/plugins/intro/introjs.css" />
+
+    <!-- colorbox -->
+    <script src="/js/admin/plugins/colorbox/jquery.colorbox-min.js"></script>
+
+    <!-- Validate -->
+    <script src="/js/admin/plugins/validation/jquery.validate.js"></script>
+
+    <!-- Custom file upload -->
+    <script src="/js/admin/plugins/fileupload/bootstrap-fileupload.min.js"></script>
+    <script src="/js/admin/plugins/mockjax/jquery.mockjax.js"></script>
+
+    <!-- masonry -->
+    <script src="/js/admin/plugins/masonry/jquery.masonry.min.js"></script>
+
+    <!-- nailthumb -->
+    <script src="/js/admin/plugins/nailthumb/jquery.nailthumb.1.1.js"></script>
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <!-- Apple devices Homescreen icon -->
+    <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png" />
+{% endblock %}

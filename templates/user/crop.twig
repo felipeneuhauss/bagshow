@@ -1,0 +1,58 @@
+{% block crop %}
+    <!-- Modal -->
+    <div id="avatar-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Editar meu avatar" aria-hidden="true" >
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3><i class="icon-picture"></i> Editar meu avatar</h3>
+        </div>
+        <div class="modal-body">
+            <ul class="nav nav-tabs" id="cropTab">
+                <li class="active"><a href="#imageSelect">Passo 1</a></li>
+                <li><a href="#imageCrop">Passo 2</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="imageSelect">
+                    <h3>Selecione a imagem do seu avatar:</h3>
+                    <br />
+                    <form id="formAvatarUpload" action="#this" method="post">
+                        <input type="file" name="image" id="image"/>
+                        <input type="submit" value="Enviar" class="btn"/>
+                    </form>
+                </div>
+                <div class="tab-pane" id="imageCrop">
+                    <h3>Recorte a imagem:</h3>
+                    <br />
+                    <div class="row">
+                        <div class="span3">
+                            <div id="imageCropContainer"></div>
+                        </div>
+                        <div class="span2">
+                            <div class="frame" style="margin: 0 1em; width: 100px; height: 100px;">
+                                <div id="imageCropPreview" class='imgareaselect-preview' style="width: 100px; height: 100px; overflow: hidden;">
+                                    <img />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='row'>
+                        <div class="span4">
+                            <form id="formAvatarCrop" action="#this" method="post">
+                                <input type="hidden" name="image" />
+                                <input type="hidden" name="height" />
+                                <input type="hidden" name="width" />
+                                <input type="hidden" name="x" />
+                                <input type="hidden" name="y" />
+                                <input type="submit" value="Recortar" class="btn"/>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
+        </div>
+    </div>
+    <script src="/app/user/user.crop.js"></script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'layouts/admin/layout.twig' %}
+{% block title %} - Ecobolsas{% endblock %}
+{% block content %}
+    <div class="row-fluid" ng-controller="BagListController">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="box">
+                    <div class="box-title">
+                        <h3>
+                            <i class="glyphicon-shopping_bag"></i>
+                            Bolsas ecológicas
+                        </h3>
+                    </div>
+                    <div class="box-content nopadding">
+                        <ul class="gallery gallery-dynamic masonry">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script id="colorbox-image" type="text/template">
+            <li>
+                <a href="#">
+                    <img alt="" src="<%= bag.imageUrl %>" class="thumb-image-bag">
+                </a>
+                <a class="customer-photo-name" href="#"><%= bag.customer.name %></a>
+                <div class="extras">
+                    <div class="extras-inner">
+                        <a rel="group-1" class="colorbox-image cboxElement" href="<%= bag.imageUrl %>"><i class="icon-search"></i></a>
+                        <a href="/bolsa/<%= bag._id %>"><i class="icon-pencil"></i></a>
+                    </div>
+                </div>
+            </li>
+        </script>
+    </div>
+
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript" src="/js/admin/app/bag/bag.list.js"></script>
+{% endblock %}
+

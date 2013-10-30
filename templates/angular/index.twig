@@ -1,0 +1,59 @@
+{% extends 'default/internal.twig' %}
+{% block title %} - Todo{% endblock %}
+
+{% block content %}
+<style>
+    .done-true {
+        text-decoration: line-through;
+        color: grey;
+    }
+</style>
+
+<div ng-app="izieApp">
+    <div ng-controller="CrudTodoController">
+        <h3 class="heading">Crud com angular js</h3>
+        <input type="text" placeholder="Pesquisar tarefa" ng-model="filter.todo" />
+        <hr />
+        <div class="row-fluid">
+            <button ng-click="addItemList()" >Add</button>
+            <br />
+            <div class="elementListResponse">
+
+            </div>
+            <ul class="elementList">
+
+            </ul>
+        </div>
+
+        <form class="form-inline" id="crudTodoForm">
+            <input type="hidden" name="id" ng-model="todoForm._id">
+            <input type="text" class="required form-control" placeholder="Tarefa" ng-model="todoForm.name">
+            <select ng-model="todoForm.done" ng-options="s.id as s.name for s in statusTask" class="required">
+            </select>
+            <button type="click" type="submit" class="btn btn-default" ng-click="save();">Add</button>
+            <button type="click" type="reset" class="btn btn-default" ng-click="cancel();">Cancelar</button>
+        </form>
+        <h3 class="heading">Listagem</h3>
+        <ul class="unstyled">
+            <li ng-repeat="todo in todos | filter: filter.todo | orderBy: name">
+                <span class="done-{[{todo.done}]}">{[{todo.name}]}</span>
+                <a href="" ng-click="edit(todo);" ><i class="icon-edit"></i></a>
+                <a href="" ng-click="delete(todo);" ><i class="icon-remove"></i></a>
+            </li>
+        </ul>
+    </div>
+    <hr />
+    <script>
+
+    </script>
+
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src='/app/core.js'></script>
+<script type="text/javascript" src="/app/angular/todo.model.js"></script>
+<script type="text/javascript" src="/app/angular/todo.crud.js"></script>
+{% endblock %}
